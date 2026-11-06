@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Camila Rocha · Maquiadora Profissional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f3;--surface:#fff;--text:#2b2024;--muted:#7a6a70;--accent:#b5546b;--accent2:#e8b4b8;--line:#eadcd8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1316;--surface:#241b1f;--text:#f5eaec;--muted:#b6a4aa;--accent:#e58fa3;--accent2:#7a3b4b;--line:#3a2c32;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1316;--surface:#241b1f;--text:#f5eaec;--muted:#b6a4aa;--accent:#e58fa3;--accent2:#7a3b4b;--line:#3a2c32;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:var(--bg);border-bottom:1px solid var(--line)}
+nav b{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;color:var(--accent)}
+nav div{display:flex;gap:18px;font-size:.9rem;align-items:center;flex-wrap:wrap}
+nav a{color:var(--text);text-decoration:none}
+nav button{background:none;border:1px solid var(--line);color:var(--text);border-radius:50%;width:32px;height:32px;cursor:pointer}
+section{padding:70px 5vw;max-width:1000px;margin:auto}
+.hero{text-align:center;padding-top:90px}
+.hero small{letter-spacing:.25em;text-transform:uppercase;color:var(--accent);font-size:.75rem}
+.hero h1{font-size:clamp(2.4rem,8vw,4.2rem);line-height:1.1;margin:14px 0}
+.hero p{color:var(--muted);max-width:520px;margin:0 auto 28px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 28px;border-radius:99px;text-decoration:none;border:0;font:inherit;cursor:pointer}
+.btn.o{background:none;border:1px solid var(--accent);color:var(--accent);margin-left:8px}
+h2{font-size:2rem;margin-bottom:8px}
+.sub{color:var(--muted);margin-bottom:28px}
+.about{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+.photo{aspect-ratio:4/5;border-radius:200px 200px 16px 16px;background:linear-gradient(160deg,var(--accent2),var(--accent))}
+.stats{display:flex;gap:28px;margin-top:20px}
+.stats b{display:block;font-size:1.6rem;color:var(--accent);font-family:'Playfair Display',Georgia,serif}
+.stats span{font-size:.8rem;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{font-size:1.2rem}
+.card p{color:var(--muted);font-size:.9rem;margin:6px 0 12px}
+.card em{font-style:normal;color:var(--accent);font-weight:500}
+.filters{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:7px 16px;border-radius:99px;cursor:pointer;font:inherit;font-size:.85rem}
+.filters button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.tile{aspect-ratio:3/4;border-radius:12px;display:flex;align-items:flex-end;padding:10px;color:#fff;font-size:.8rem;cursor:pointer;transition:transform .2s}
+.tile:hover{transform:scale(1.03)}
+.quote{background:var(--surface);border-left:3px solid var(--accent);padding:18px 22px;border-radius:0 12px 12px 0}
+.quote p{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem}
+.quote span{color:var(--muted);font-size:.85rem}
+.book{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;gap:12px;max-width:480px}
+.book input,.book select{padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;width:100%}
+footer{text-align:center;padding:30px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:9}
+#lb div{width:min(80vw,380px);aspect-ratio:3/4;border-radius:16px;display:flex;align-items:flex-end;padding:20px;color:#fff;font-size:1.1rem}
+@media(max-width:640px){.about{grid-template-columns:1fr}.photo{max-width:260px;margin:auto}nav div a.h{display:none}}
+</style>
+</head>
+<body>
+<nav><b>Camila Rocha</b><div><a class="h" href="#servicos">Serviços</a><a class="h" href="#galeria">Galeria</a><a class="h" href="#agendar">Agendar</a><button id="th" aria-label="Alternar tema">◐</button></div></nav>
+
+<section class="hero">
+<small>Maquiadora profissional</small>
+<h1>Realce o que já é seu.</h1>
+<p>Maquiagem para noivas, eventos e ensaios, com pele leve, acabamento natural e duração o dia todo.</p>
+<a class="btn" href="#agendar">Agendar horário</a><a class="btn o" href="#galeria">Ver trabalhos</a>
+</section>
+
+<section id="sobre">
+<div class="about">
+<div class="photo"></div>
+<div>
+<h2>Sobre mim</h2>
+<p class="sub" style="margin-bottom:0">Sou a Camila, maquiadora há 8 anos. Acredito que a boa maquiagem valoriza a pessoa em vez de escondê-la. Atendo em estúdio próprio e também em domicílio.</p>
+<div class="stats"><div><b>8</b><span>anos</span></div><div><b>600+</b><span>clientes</span></div><div><b>120</b><span>noivas</span></div></div>
+</div>
+</div>
+</section>
+
+<section id="servicos">
+<h2>Serviços</h2><p class="sub">Valores de exemplo, ajuste para a sua realidade.</p>
+<div class="cards">
+<div class="card"><h3>Social</h3><p>Festas, formaturas e jantares. Inclui cílios.</p><em>R$ 180</em></div>
+<div class="card"><h3>Noiva</h3><p>Teste prévio + dia do casamento, com retoque.</p><em>R$ 650</em></div>
+<div class="card"><h3>Editorial</h3><p>Ensaios, books e produções de moda.</p><em>R$ 320</em></div>
+<div class="card"><h3>Aula de automaquiagem</h3><p>Aprenda a fazer o seu look, 2 horas.</p><em>R$ 250</em></div>
+</div>
+</section>
+
+<section id="galeria">
+<h2>Galeria</h2><p class="sub">Toque em uma foto para ampliar. Aqui entram as suas fotos reais.</p>
+<div class="filters" id="f"><button class="on" data-c="todos">Todos</button><button data-c="noiva">Noiva</button><button data-c="social">Social</button><button data-c="editorial">Editorial</button></div>
+<div class="grid" id="g"></div>
+</section>
+
+<section id="depoimentos">
+<h2>Depoimentos</h2><p class="sub">Prova social converte mais que qualquer texto bonito.</p>
+<div class="quote"><p>“Fiquei com a pele linda o casamento inteiro, nem precisei retocar.”</p><span>Mariana, noiva</span></div>
+</section>
+
+<section id="agendar">
+<h2>Agendar</h2><p class="sub">O pedido cai direto no seu WhatsApp.</p>
+<div class="book">
+<input id="n" placeholder="Seu nome">
+<select id="s"><option>Social</option><option>Noiva</option><option>Editorial</option><option>Aula de automaquiagem</option></select>
+<input id="d" type="date">
+<button class="btn" id="w">Enviar pelo WhatsApp</button>
+</div>
+</section>
+
+<footer>© 2026 Camila Rocha · @camila.makeup · São Paulo</footer>
+<div id="lb"><div id="lbi"></div></div>
+
+<script>
+var items=[["noiva","Noiva · Clássico","#e8b4b8,#b5546b"],["social","Social · Glow","#f3c9a5,#c9704f"],["editorial","Editorial · Gráfico","#8d7bd1,#2f2a5a"],["noiva","Noiva · Boho","#d9b99b,#8a5a44"],["social","Social · Olho marcado","#6b4a6e,#2b1c33"],["editorial","Editorial · Neon","#ff9ad5,#5a4bff"],["noiva","Noiva · Romântico","#f7d6d0,#d98a8a"],["social","Social · Batom vermelho","#e57373,#7b1e2b"]];
+var g=document.getElementById('g'),lb=document.getElementById('lb'),lbi=document.getElementById('lbi');
+function render(c){g.innerHTML='';items.forEach(function(it){if(c!=='todos'&&it[0]!==c)return;var t=document.createElement('div');t.className='tile';var bg='linear-gradient(160deg,'+it[2]+')';t.style.background=bg;t.textContent=it[1];t.onclick=function(){lbi.style.background=bg;lbi.textContent=it[1];lb.style.display='flex'};g.appendChild(t)})}
+render('todos');
+document.getElementById('f').onclick=function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');render(b.dataset.c)};
+lb.onclick=function(){lb.style.display='none'};
+document.getElementById('w').onclick=function(){var n=document.getElementById('n').value||'';var s=document.getElementById('s').value;var d=document.getElementById('d').value;var m='Olá, Camila! Sou '+n+' e quero agendar maquiagem '+s+(d?' para '+d:'')+'.';window.open('https://wa.me/5511999999999?text='+encodeURIComponent(m),'_blank')};
+document.getElementById('th').onclick=function(){var r=document.documentElement;var dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=dark?'light':'dark'};
+</script>
+</body>
+</html>
